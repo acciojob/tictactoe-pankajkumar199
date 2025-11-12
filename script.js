@@ -1,4 +1,3 @@
-//your JS code here. If required.
 let player1 = '';
 let player2 = '';
 let currentPlayer = '';
@@ -30,7 +29,7 @@ submitBtn.addEventListener('click', () => {
 
 cells.forEach(cell => {
   cell.addEventListener('click', () => {
-    const index = cell.id - 1;
+    const index = parseInt(cell.id) - 1;
 
     if (board[index] !== '' || !gameActive) return;
 
@@ -38,7 +37,7 @@ cells.forEach(cell => {
     cell.textContent = board[index];
 
     if (checkWinner()) {
-      messageDiv.textContent = `${currentPlayer}, congratulations you won!`;
+      messageDiv.textContent = `${currentPlayer} congratulations you won!`;
       gameActive = false;
       return;
     }
@@ -50,6 +49,24 @@ cells.forEach(cell => {
     }
 
     currentPlayer = currentPlayer === player1 ? player2 : player1;
-    messageDiv
+    messageDiv.textContent = `${currentPlayer}, you're up`;
+  });
+});
 
-	  
+function checkWinner() {
+  const winningCombos = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+
+  return winningCombos.some(combo => {
+    const [a, b, c] = combo;
+    return board[a] && board[a] === board[b] && board[a] === board[c];
+  });
+}

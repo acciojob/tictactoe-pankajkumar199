@@ -1,8 +1,7 @@
-/*  your css code here. If applicable */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   text-align: center;
-  background: #fff;
+  background-color: #fff;
 }
 
 .container {
@@ -10,7 +9,7 @@ body {
 }
 
 h1 {
-  font-family: 'Comic Sans MS', cursive;
+  font-family: "Comic Sans MS", cursive;
   font-size: 36px;
   margin-bottom: 20px;
 }
@@ -37,7 +36,7 @@ button {
 }
 
 button:hover {
-  background-color: #f0f0f0;
+  background-color: #f2f2f2;
 }
 
 .hidden {
@@ -54,7 +53,7 @@ button:hover {
 }
 
 .cell {
-  border: 2px solid black;
+  border: 2px solid #000;
   font-size: 40px;
   display: flex;
   align-items: center;
@@ -65,4 +64,5 @@ button:hover {
 .message {
   margin-top: 15px;
   font-size: 18px;
-  font-weight: bo
+  font-weight: bold;
+}
