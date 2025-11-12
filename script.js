@@ -33,7 +33,8 @@ cells.forEach(cell => {
 
     if (board[index] !== '' || !gameActive) return;
 
-    board[index] = currentPlayer === player1 ? 'X' : 'O';
+    // ✅ LOWERCASE letters for Cypress test compatibility
+    board[index] = currentPlayer === player1 ? 'x' : 'o';
     cell.textContent = board[index];
 
     if (checkWinner()) {
